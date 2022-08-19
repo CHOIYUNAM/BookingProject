@@ -1,6 +1,5 @@
 package com.teamck.showing.domain;
 
-import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -37,9 +35,7 @@ public class SHOW_INFO {
 	private int SI_RUNTIME;
 	private String SI_ACTOR;
 	private String SI_THEATER;
-	@Column(columnDefinition = "BLOB")
-	@Lob
-	private Blob SI_POSTER;
+	private String SI_POSTER;
 	@Column(columnDefinition = "TEXT")
 	private String SI_CONTEXT;
 	private Date START_DATE;

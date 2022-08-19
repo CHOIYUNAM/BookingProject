@@ -18,7 +18,7 @@ import com.teamck.showing.cmm.ApplicationDBRead;
 import com.teamck.showing.domain.SHOW_INFO;
 import com.teamck.showing.domain.USER_INFO;
 import com.teamck.showing.repository.ShowInfoRepository;
-import com.teamck.showing.repository.UserRepository;
+import com.teamck.showing.repository.UserInfoRepository;
 
 @SpringBootTest
 @TestPropertySource("classpath:application.yml")
@@ -46,7 +46,7 @@ class BookingProjectApplicationTests {
 	}
 	
 	@Autowired
-	UserRepository userRepository;
+	UserInfoRepository userRepository;
 	
 //	@Test
 //	public void testUserRepostory() {
@@ -57,11 +57,13 @@ class BookingProjectApplicationTests {
 	
 	@Autowired
 	ShowInfoRepository showInfoRepository;
+
+	private Blob abc;
 	
 	@Test
 	public void testShowRepository() throws SQLException {
 		
-		Blob abc = null;
+		abc = null;
         int a = 123;
         byte[] abcc = {(byte) a, (byte) a}; 
         abc.setBytes(1, abcc);
@@ -74,7 +76,6 @@ class BookingProjectApplicationTests {
 				.SI_RUNTIME(120)
 				.SI_ACTOR("김태욱")
 				.SI_THEATER("서울")
-				.SI_POSTER(abc)
 				.SI_CONTEXT("테스트중")
 				.START_DATE(new Date())
 				.REG_DT(new Date())
