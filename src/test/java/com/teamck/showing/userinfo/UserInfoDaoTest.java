@@ -23,16 +23,19 @@ public class UserInfoDaoTest {
 				.u_NAME("TEST_NAME")
 				.u_PW("TEST_PASSWORD")
 				.u_PNUM("TEST_PNUM")
+				.u_TYPE('0')
 				.build();
 		
 		// assertNotNull(userInfoRepository.findAll());
 		
-		userInfoRepository.deleteByUId("TEST_ID");
+//		userInfoRepository.deleteByUId("TEST_ID2");
 		
 		
 		if(userInfoRepository.save(user1) == null) System.out.println("등록 실패");
 		else System.out.println("등록 성공");
 		
-		System.out.println(userInfoRepository.findAll());
+//		System.out.println(userInfoRepository.findById(3));
+		
+		System.out.println("findAll:"+userInfoRepository.findAll().toString());
 	}
 }

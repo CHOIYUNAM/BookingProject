@@ -15,4 +15,10 @@ public interface UserInfoRepository extends JpaRepository<USER_INFO, Integer>{
 	@Transactional
 	@Query("DELETE FROM USER_INFO WHERE U_ID = :uId")
 	public void deleteByUId(@Param("uId") String uId);
+	
+	@Query("SELECT U_SEQ FROM USER_INFO ui WHERE U_ID = :uId")
+	public Integer findSeqByUId(@Param("uId") String uId);
+	
+	@Query("SELECT ui FROM USER_INFO ui WHERE U_ID = :uId")
+	public USER_INFO findByUId(@Param("uId") String uId);
 }
